@@ -36,7 +36,7 @@
         <td>
           <input type="text" name="name" size="45"
                  value="<c:out value='${product.name}' />"
-          />
+          required>
         </td>
       </tr>
       <tr>
@@ -44,7 +44,7 @@
         <td>
           <input type="text" name="type" size="45"
                  value="<c:out value='${product.type}' />"
-          />
+          required>
         </td>
       </tr>
       <tr>
@@ -52,7 +52,7 @@
         <td>
           <input type="text" name="price" size="45"
                  value="<c:out value='${product.price}' />"
-          />
+          required>
         </td>
       </tr>
       <tr>
@@ -60,7 +60,7 @@
         <td>
           <input type="text" name="inventory" size="45"
                  value="<c:out value='${product.inventory}' />"
-          />
+          required>
         </td>
       </tr>
       <tr>
@@ -68,7 +68,7 @@
         <td>
           <input type="text" name="img" size="45"
                  value="<c:out value='${product.img}' />"
-          />
+          required>
         </td>
       </tr>
       <tr>

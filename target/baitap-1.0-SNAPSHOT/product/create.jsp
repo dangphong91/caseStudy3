@@ -29,31 +29,31 @@
       <tr>
         <th>Product Name:</th>
         <td>
-          <input type="text" name="name" id="name" size="45"/>
+          <input type="text" name="name" id="name" size="45" required>
         </td>
       </tr>
       <tr>
         <th>Product Type:</th>
         <td>
-          <input type="text" name="type" id="type" size="45"/>
+          <input type="text" name="type" id="type" size="45" required>
         </td>
       </tr>
       <tr>
         <th>Product Price:</th>
         <td>
-          <input type="text" name="price" id="price" size="45"/>
+          <input type="text" name="price" id="price" size="45" required>
         </td>
       </tr>
       <tr>
         <th>Product Inventory:</th>
         <td>
-          <input type="text" name="inventory" id="inventory" size="45"/>
+          <input type="text" name="inventory" id="inventory" size="45" required>
         </td>
       </tr>
       <tr>
         <th>Product Image:</th>
         <td>
-          <input type="text" name="img" id="img" size="45"/>
+          <input type="text" name="img" id="img" size="45" required>
         </td>
       </tr>
       <tr>
