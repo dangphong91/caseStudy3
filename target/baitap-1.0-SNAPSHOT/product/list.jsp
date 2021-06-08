@@ -136,13 +136,19 @@
                         <td style="padding: 20px"><img style="width: 100px;" src=<c:out value="img/${product.img}"/>></td>
                         <c:if test='${requestScope["user"] == "admin"}'>
                         <td style="padding: 20px">
-                            <a href="products?action=edit&id=${product.id}">Edit</a>
-                            <a href="products?action=delete&id=${product.id}">Delete</a>
+                            <a href="products?action=edit&id=${product.id}">
+                                <input type="button" value="Edit">
+                            </a>
+                            <a href="products?action=delete&id=${product.id}">
+                                <input type="button" value="Delete">
+                            </a>
                         </td>
                         </c:if>
                         <c:if test='${requestScope["user"] != "admin" && requestScope["user"] != null}'>
                         <td style="padding: 20px">
-                            <a href="products?action=add&id=${product.id}">Add To Cart</a>
+                            <a href="products?action=add&id=${product.id}">
+                                <input type="button" value="Add To Cart">
+                            </a>
                         </td>
                         </c:if>
                     </tr>

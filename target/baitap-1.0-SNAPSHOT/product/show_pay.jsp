@@ -30,6 +30,7 @@
             <th>Type Product</th>
             <th>Price Product</th>
             <th>Count Order</th>
+            <th>Action</th>
         </tr>
         <c:forEach var="pay" items="${listPay}">
             <tr style="background: #b6effb">
@@ -40,6 +41,26 @@
                 <td><c:out value="${pay.type}"/></td>
                 <td><c:out value="${pay.price}"/></td>
                 <td><c:out value="${pay.count}"/></td>
+                <td>
+                    <a href="products?action=deletePay&id=${pay.id}">
+                        <input type="button" value="Delete">
+                    </a>
+                </td>
+            </tr>
+        </c:forEach>
+    </table>
+    <br>
+    <br>
+    <table border="1" cellpadding="5" style="text-align: center">
+        <h2>List of Totals</h2>
+        <tr style="background: #0dcaf0">
+            <th>User</th>
+            <th>Total</th>
+        </tr>
+        <c:forEach var="total" items="${listTotal}">
+            <tr style="background: #b6effb">
+                <td><c:out value="${total.user}"/></td>
+                <td><c:out value="${total.total}"/></td>
             </tr>
         </c:forEach>
     </table>

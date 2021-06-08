@@ -8,6 +8,7 @@ public class Pay {
     private String type;
     private double price;
     private int count;
+    private double total;
 
     public Pay(int id,String user, String date, String name, String type, double price, int count) {
         this.id = id;
@@ -25,6 +26,11 @@ public class Pay {
         this.type = type;
         this.price = price;
         this.count = count;
+    }
+
+    public Pay(String user, double total) {
+        this.user = user;
+        this.total = total;
     }
 
     public String getUser() {
@@ -81,5 +87,13 @@ public class Pay {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
     }
 }

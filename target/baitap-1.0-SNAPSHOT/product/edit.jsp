@@ -21,9 +21,6 @@
 <%@include file="include/header.jsp" %>
 <center>
   <h1 style="margin-top: 90px">Product Management</h1>
-  <h2>
-    <a href="products">List All Products</a>
-  </h2>
 </center>
 <div align="center">
   <form method="post">

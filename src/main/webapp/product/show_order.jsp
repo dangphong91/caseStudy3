@@ -40,8 +40,12 @@
                 <td><c:out value="${order.price}"/></td>
                 <td><c:out value="${order.count}"/></td>
                 <td>
-                    <a href="products?action=deleteOrder&id=${order.id}">Delete</a>
-                    <a href="products?action=addPay&id=${order.id}">Pay</a>
+                    <a href="products?action=deleteOrder&id=${order.id}">
+                        <input type="button" value="Delete">
+                    </a>
+                    <a href="products?action=addPay&id=${order.id}">
+                        <input type="button" value="Pay">
+                    </a>
                 </td>
             </tr>
         </c:forEach>
@@ -69,6 +73,7 @@
             </tr>
         </c:forEach>
     </table>
+    <h3>TOTAL PAYMENT : ${requestScope["total"]}</h3>
 </div>
 <%@include file="include/footer.jsp" %>
 </body>

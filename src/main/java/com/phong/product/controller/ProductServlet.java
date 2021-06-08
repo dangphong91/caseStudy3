@@ -68,6 +68,9 @@ public class ProductServlet extends HttpServlet {
                 case "deleteOrder":
                     deleteOrder(request,response);
                     break;
+                case "deletePay":
+                    deletePay(request,response);
+                    break;
                 case "logout":
                     logUot(request, response);
                     break;
@@ -166,6 +169,7 @@ public class ProductServlet extends HttpServlet {
     private void showNewForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setAttribute("user", user);
+        request.setAttribute("count", count_user);
         RequestDispatcher dispatcher = request.getRequestDispatcher("product/create.jsp");
         dispatcher.forward(request, response);
     }
@@ -230,6 +234,7 @@ public class ProductServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         Product product = productDAO.selectProduct(id);
         request.setAttribute("user", user);
+        request.setAttribute("count", count_user);
         RequestDispatcher dispatcher = request.getRequestDispatcher("product/edit.jsp");
         request.setAttribute("product", product);
         dispatcher.forward(request, response);
@@ -281,11 +286,13 @@ public class ProductServlet extends HttpServlet {
             throws SQLException, ServletException, IOException {
         List<Order> listOrder = orderDAO.selectOrderByUser(user);
         List<Pay> listPay = payDAO.searchPays(user);
+        double total = payDAO.getSum(user);
         request.setAttribute("user", user);
         request.setAttribute("count", count_user);
         RequestDispatcher dispatcher = request.getRequestDispatcher("product/show_order.jsp");
         request.setAttribute("listOrder", listOrder);
         request.setAttribute("listPay", listPay);
+        request.setAttribute("total", total);
         dispatcher.forward(request, response);
     }
 
@@ -294,11 +301,13 @@ public class ProductServlet extends HttpServlet {
         count_user = payDAO.getCount();
         List<Pay> listPay = payDAO.selectAllPays();
         List<User> listUser = userDAO.selectAllUsers();
+        List<Pay> listTotal = payDAO.getTotal();
         request.setAttribute("user", user);
         request.setAttribute("count", count_user);
         RequestDispatcher dispatcher = request.getRequestDispatcher("product/show_pay.jsp");
         request.setAttribute("listPay", listPay);
         request.setAttribute("listUser", listUser);
+        request.setAttribute("listTotal", listTotal);
         dispatcher.forward(request, response);
     }
 
@@ -310,6 +319,7 @@ public class ProductServlet extends HttpServlet {
         payDAO.insertPay(pay);
         orderDAO.deleteOrder(id);
         count_user = orderDAO.getCount(user);
+        double total = payDAO.getSum(user);
         List<Order> listOrder = orderDAO.selectOrderByUser(user);
         List<Pay> listPay = payDAO.searchPays(user);
         request.setAttribute("user", user);
@@ -317,6 +327,7 @@ public class ProductServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("product/show_order.jsp");
         request.setAttribute("listOrder", listOrder);
         request.setAttribute("listPay", listPay);
+        request.setAttribute("total", total);
         dispatcher.forward(request, response);
     }
 
@@ -325,11 +336,32 @@ public class ProductServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         orderDAO.deleteOrder(id);
         count_user = orderDAO.getCount(user);
+        double total = payDAO.getSum(user);
         List<Order> listOrder = orderDAO.selectOrderByUser(user);
+        List<Pay> listPay = payDAO.searchPays(user);
         request.setAttribute("user", user);
         request.setAttribute("count", count_user);
         RequestDispatcher dispatcher = request.getRequestDispatcher("product/show_order.jsp");
         request.setAttribute("listOrder", listOrder);
+        request.setAttribute("listPay", listPay);
+        request.setAttribute("total", total);
+        dispatcher.forward(request, response);
+    }
+
+    private void deletePay(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        payDAO.deletePay(id);
+        count_user = payDAO.getCount();
+        List<Pay> listPay = payDAO.selectAllPays();
+        List<User> listUser = userDAO.selectAllUsers();
+        List<Pay> listTotal = payDAO.getTotal();
+        request.setAttribute("user", user);
+        request.setAttribute("count", count_user);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("product/show_pay.jsp");
+        request.setAttribute("listPay", listPay);
+        request.setAttribute("listUser", listUser);
+        request.setAttribute("listTotal", listTotal);
         dispatcher.forward(request, response);
     }
 

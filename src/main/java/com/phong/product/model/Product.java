@@ -64,10 +64,6 @@ public class Product {
         return inventory;
     }
 
-    public void setInventory(int inventory) {
-        this.inventory = inventory;
-    }
-
     public String getImg() {
         return img;
     }

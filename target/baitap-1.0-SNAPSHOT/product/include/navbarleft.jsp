@@ -16,5 +16,9 @@
       <a href="products?action=create">Add New Product</a>
     </c:if></li>
   </ul>
+    <div style="margin-top: 55vh">
+      <p style="padding-left: 5%; border-radius: 3px; color: #cff4fc; box-shadow: 2px 2px 2px 0px green">Contact: 0932363608</p>
+      <p  style="padding-left: 5%; border-radius: 3px; color: #cff4fc; box-shadow: 2px 2px 2px 0px green">Address: 208-Tran Phu</p>
+    </div>
   </div>
 </nav>

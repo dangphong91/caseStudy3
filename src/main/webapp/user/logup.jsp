@@ -32,9 +32,9 @@
             <input type="text" name="user" placeholder="name" size="33">
             <input type="password" name="pass" id="myPass" placeholder="pass" size="24">
             <input type="checkbox" onclick="myFunction()">Show
-            <input type="text" name="fullname" placeholder="full name" size="33">
-            <input type="text" name="address" placeholder="address" size="33">
-            <input type="text" name="phone" placeholder="phone number" size="33">
+            <input type="text" name="fullname" placeholder="full name" size="33" required>
+            <input type="text" name="address" placeholder="address" size="33" required>
+            <input type="text" name="phone" placeholder="phone number" size="33" required>
             <input type="submit" value="Sign Up">
             <a href="/user/login.jsp">
                 <input type="button" value="Sign In">

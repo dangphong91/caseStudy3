@@ -64,7 +64,7 @@ public class OrderDAO implements IOrderDAO {
                 String date = rs.getString("dateOrder");
                 String name = rs.getString("nameProduct");
                 String type = rs.getString("typeProduct");
-                Double price = rs.getDouble("priceProduct");
+                double price = rs.getDouble("priceProduct");
                 int count = rs.getInt("countOrder");
                 orders.add(new Order(id, date, name, type, price, count));
             }

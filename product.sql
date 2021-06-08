@@ -35,7 +35,7 @@ CREATE TABLE `orders` (
   KEY `idProduct` (`idProduct`),
   CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`account`) REFERENCES `users` (`name`),
   CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`idProduct`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (21,'2021-06-05 11:02:53','duong',4,1),(22,'2021-06-05 11:02:55','duong',7,1),(23,'2021-06-05 11:02:57','duong',8,1),(24,'2021-06-05 11:03:15','duong',4,1),(28,'2021-06-06 17:03:51','khanh',17,1),(32,'2021-06-07 03:23:36','phong',9,1),(33,'2021-06-07 04:10:59','phong',8,1),(34,'2021-06-07 04:29:23','phong',36,1);
+INSERT INTO `orders` VALUES (21,'2021-06-05 11:02:53','duong',4,1),(22,'2021-06-05 11:02:55','duong',7,1),(23,'2021-06-05 11:02:57','duong',8,1),(24,'2021-06-05 11:03:15','duong',4,1),(28,'2021-06-06 17:03:51','khanh',17,1),(39,'2021-06-08 03:08:26','phong',7,1),(40,'2021-06-08 03:08:29','phong',8,1),(41,'2021-06-08 03:08:32','phong',13,1),(42,'2021-06-08 03:08:34','phong',13,1);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,7 +64,7 @@ CREATE TABLE `pays` (
   `priceProduct` double DEFAULT NULL,
   `countProduct` int DEFAULT NULL,
   PRIMARY KEY (`idPay`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +73,7 @@ CREATE TABLE `pays` (
 
 LOCK TABLES `pays` WRITE;
 /*!40000 ALTER TABLE `pays` DISABLE KEYS */;
-INSERT INTO `pays` VALUES (1,'phong','2021-06-07 07:46:17','Number1','Chai 330ml',5000,1),(2,'phong','2021-06-07 07:53:36','Bia Heineken','Lon 330ml',15000,1),(3,'phong','2021-06-07 07:55:14','Cocacola Zero','Chai 390ml',10000,1),(4,'phong','2021-06-07 07:57:38','Cocacola Zero','Lon 320ml',8000,1),(5,'phong','2021-06-07 07:57:41','Cocacola','Chai 390ml',5000,1),(6,'phong','2021-06-07 07:57:43','Pepsi','Lon 330ml',6000,1),(7,'khanh','2021-06-07 09:20:43','7 Up','Chai 1,5l',9000,1);
+INSERT INTO `pays` VALUES (1,'phong','2021-06-07 07:46:17','Number1','Chai 330ml',5000,1),(2,'phong','2021-06-07 07:53:36','Bia Heineken','Lon 330ml',15000,1),(7,'khanh','2021-06-07 09:20:43','7 Up','Chai 1,5l',9000,1),(11,'tin','2021-06-08 04:11:44','Cocacola','Lon 330ml',7000,1),(12,'tin','2021-06-08 04:11:48','Redbull','Lon 250ml',7000,1);
 /*!40000 ALTER TABLE `pays` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,4 +141,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-07 22:03:39
+-- Dump completed on 2021-06-08 11:23:49
